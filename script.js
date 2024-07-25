@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 document.getElementById("send-message").addEventListener("click", () => {
   const message = document.getElementById("message").value;
   const recipient = document.getElementById("recipient").value;
@@ -25,7 +25,9 @@ function encryptMessage(message) {
 }
 
 function createDigitalSignature(message) {
-  const privateKey = process.env.PRIVATE_KEY.replace(/\n/g, "\n");
+  const privateKey = `-----BEGIN PRIVATE KEY-----
+
+-----END PRIVATE KEY-----`;
   const sign = new JSEncrypt();
   sign.setPrivateKey(privateKey);
   const signature = sign.sign(message, CryptoJS.SHA256, "sha256");
@@ -59,13 +61,7 @@ function decryptMessage(encryptedMessage) {
 
 function verifyDigitalSignature(message, signature) {
   const publicKey = `-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoxqQcg/Swss/m8Ei+rui
-EJEtiqRQXBsC0yzbExawWqtAAEp8OI0LnKxyuuHlbeX6he2qf0DDAC6/iKd0i7qw
-DybW4GHkunkMo7Q065h1TpZJCi6+OvRBQKCxr0upY8Y6u3hhRTdwYUFCDKZcA5M1
-b+f2StJco5yu1qPWYXbV85VSnjbaccJwC0dfjkGsmapwxXFsLQOPvBSjx6YjobGf
-NIB2TWS3lecaSDCp3ylh3C6CyjcjQB/BUxss1OUJ9BMET2Xzer9Xnk7lMTsw35eE
-2n2O4LB9e7tVY+FF3vBr8lUjDDUPwCW/CbADkT2WpCQIqBX4QZ4mUfIV/B8W/8DQ
-mwIDAQAB
+
 -----END PUBLIC KEY-----`;
   const verify = new JSEncrypt();
   verify.setPublicKey(publicKey);
