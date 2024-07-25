@@ -24,30 +24,6 @@ git clone https://github.com/rae3skhan/Digital-Signature.git
 
 ```
 
-# Secure Communication
-
-This project implements a secure communication system using encryption, decryption, and digital signatures to ensure the confidentiality and integrity of messages. It uses CryptoJS for cryptographic operations and JSEncrypt for handling digital signatures.
-
-## Features
-
-- **Encryption and Decryption**: Utilizes AES encryption to securely transmit messages.
-- **Digital Signatures**: Ensures the authenticity and integrity of messages using RSA digital signatures.
-- **User Interface**: Simple and intuitive UI for sending and receiving encrypted messages.
-
-## Getting Started
-
-### Prerequisites
-
-- A modern web browser that supports JavaScript.
-- Internet connection to load external CryptoJS and JSEncrypt libraries.
-
-### Installation
-
-Clone the repository to your local machine:
-
-```sh
-git clone https://github.com/rae3skhan/Digital-Signature.git
-```
 
 Navigate to the project directory:
 
