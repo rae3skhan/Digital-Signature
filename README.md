@@ -22,8 +22,8 @@ Clone the repository to your local machine:
 ```sh
 git clone https://github.com/rae3skhan/Digital-Signature.git
 
+```
 
-```markdown
 # Secure Communication
 
 This project implements a secure communication system using encryption, decryption, and digital signatures to ensure the confidentiality and integrity of messages. It uses CryptoJS for cryptographic operations and JSEncrypt for handling digital signatures.
